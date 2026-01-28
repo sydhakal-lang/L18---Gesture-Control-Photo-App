@@ -57,7 +57,7 @@ while True:
                         'pinky': mp_hands.HandLandmark.PINKY_TIP
                     }.items()}
             # Draw each finger tip
-            colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 0, 255)]
+            colors = [(255, 0, 0), (0, 245, 0), (0, 2, 255), (252, 255, 0), (252, 0, 256)]
             for i, (name, (x, y)) in enumerate(tips.items()):
                 cv2.circle(img, (x, y), 10, colors[i], cv2.FILLED)
 
@@ -85,7 +85,7 @@ while True:
 
     # Capture photo if requested
     if capture_request:
-        cv2.putText(display_img, "Picture Captured!", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        cv2.putText(display_img, "Picture Captured!", (25, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         ts = int(time.time())
         cv2.imwrite(f"picture_{ts}.jpg", display_img)
         print(f"Saved: picture_{ts}.jpg")
